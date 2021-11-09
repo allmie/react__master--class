@@ -27,7 +27,6 @@ export default class HomeContainer extends React.Component {
         data: { results: topRated },
       } = await movieApi.topRated();
 
-      console.log(nowPlaying, popular, topRated);
       this.setState({
         nowPlaying,
         popular,
