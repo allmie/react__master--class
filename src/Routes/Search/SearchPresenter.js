@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Loader from 'Components/Loader';
 import Section from 'Components/Section';
+import Message from 'Components/Message';
 
 const Container = styled.div`
   padding: 0px 20px;
@@ -50,6 +51,7 @@ const SearchPresenter = ({
             {tvResults.map((show) => show.name)}
           </Section>
         )}
+        {error && <Message text={error} />}
       </>
     )}
   </Container>
