@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import Section from 'Components/Section';
+import Loader from 'Components/Loader';
 
 const Container = styled.div`
   padding: 0 10px;
@@ -9,7 +10,7 @@ const Container = styled.div`
 
 const HomePresenter = ({ nowPlaying, popular, topRated, loading, error }) =>
   loading ? (
-    <h2>Loading...</h2>
+    <Loader />
   ) : (
     <Container>
       {nowPlaying && (

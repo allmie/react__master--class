@@ -22,7 +22,7 @@ const Section = ({ title, children }) => (
 );
 
 Section.propTypes = {
-  tilte: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node,

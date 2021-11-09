@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Loader from 'Components/Loader';
 
 const DetailPresenter = ({ error, loading, detail, isMovie }) =>
-  loading ? <h2>Loading...</h2> : <h1>movie / tv</h1>;
+  loading ? <Loader /> : <h1>movie / tv</h1>;
 //   isMovie ? (
 //     <h2 key={detail.id}>{detail.original_title}</h2>
 //     <span>test</span>
