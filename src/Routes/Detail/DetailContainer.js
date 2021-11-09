@@ -7,7 +7,6 @@ export default class DetailContainer extends React.Component {
     error: '',
     loading: true,
     detail: [],
-    isMovie: null,
   };
 
   componentDidMount = () => {

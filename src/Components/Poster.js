@@ -47,8 +47,34 @@ const Year = styled.span`
   color: rgba(255, 255, 255, 0.5);
 `;
 
+const Data = styled.div`
+  width: 70%;
+  margin-left: 10px;
+`;
+
+const SetTitle = styled.h3`
+  font-size: 32px;
+`;
+
+const ItemContainer = styled.div`
+  margin: 20px 0;
+`;
+
+const Item = styled.span``;
+
+const Divider = styled.span`
+  margin: 0 10px;
+`;
+
+const Overview = styled.p`
+  font-size: 12px;
+  opacity: 0.7;
+  line-height: 1.5;
+  width: 50%;
+`;
+
 const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
-  <Link to={isMovie ? `/movie/${id}` : `/show/${id}`}>
+  <Link to={isMovie ? `/movie/${id}` : `/tv/${id}`}>
     <Container>
       <ImageContainer>
         <Image
@@ -65,9 +91,9 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => (
           {rating}/10
         </Rating>
       </ImageContainer>
-      <Title>
+      <SetTitle>
         {title.length > 18 ? `${title.substring(0, 18)}...` : title}
-      </Title>
+      </SetTitle>
       <Year>{year}</Year>
     </Container>
   </Link>
