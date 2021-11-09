@@ -10,7 +10,7 @@ import TV from 'Routes/TV';
 import Search from 'Routes/Search';
 import Header from './Header';
 
-export default () => (
+const AppRouter = () => (
   <Router>
     <Header />
     <Switch>
@@ -21,3 +21,5 @@ export default () => (
     </Switch>
   </Router>
 );
+
+export default AppRouter;

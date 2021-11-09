@@ -1,1 +1,1 @@
-export default () => 'Detail';
+export default () => 'TV';

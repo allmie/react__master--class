@@ -22,5 +22,5 @@ TV
 
 - [ ] Popular
 - [ ] TopRated
-- [ ] AiringToday / OnTheAir
+- [ ] Airing Today
 - [ ] Search

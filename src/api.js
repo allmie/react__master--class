@@ -36,7 +36,7 @@ export const tvApi = {
     }),
   popular: () => api.get('tv/popular'),
   topRated: () => api.get('tv/top_rated'),
-  AiringToday: () => api.get('tv/airing_today'),
+  airingToday: () => api.get('tv/airing_today'),
   search: (term) =>
     api.get('search/tv', {
       params: {
