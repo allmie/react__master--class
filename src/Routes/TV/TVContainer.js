@@ -27,8 +27,6 @@ export default class TVContainer extends React.Component {
         data: { results: topRated },
       } = await tvApi.topRated();
 
-      console.log(airingToday, popular, topRated);
-
       this.setState({
         airingToday,
         popular,
