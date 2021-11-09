@@ -1,26 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import Section from 'Components/Section';
+
+const Container = styled.div`
+  padding: 0 10px;
+`;
 
 const HomePresenter = ({ nowPlaying, popular, topRated, loading, error }) =>
   loading ? (
     <h2>Loading...</h2>
   ) : (
-    <>
-      <h2>nowPlaying</h2>
-      {nowPlaying.map((movie) => (
-        <h2 key={movie.id}>{movie.title}</h2>
-      ))}
-
-      <h2>Popular</h2>
-      {popular.map((movie) => (
-        <h2 key={movie.id}>{movie.title}</h2>
-      ))}
-
-      <h2>topRated</h2>
-      {topRated.map((movie) => (
-        <h2 key={movie.id}>{movie.title}</h2>
-      ))}
-    </>
+    <Container>
+      {nowPlaying && (
+        <Section title='Now Playing'>
+          {nowPlaying.map((movie) => movie.title)}
+        </Section>
+      )}
+      {popular && (
+        <Section title='Popular'>{popular.map((movie) => movie.title)}</Section>
+      )}
+      {topRated && (
+        <Section title='Top Rated'>
+          {topRated.map((movie) => movie.title)}
+        </Section>
+      )}
+    </Container>
   );
 
 HomePresenter.propTypes = {
