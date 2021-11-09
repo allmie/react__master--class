@@ -3,16 +3,22 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
 const Container = styled.div`
-  &:not(:last-child) {
+  :not(:last-child) {
     margin-bottom: 50px;
   }
 `;
-const Title = styled.p`
-  font-size: 2.3em;
+
+const Title = styled.span`
+  font-size: 14px;
   font-weight: 600;
-  margin-bottom: 30px;
 `;
-const Movies = styled.p``;
+
+const Movies = styled.div`
+  margin-top: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 125px);
+  grid-gap: 25px;
+`;
 
 const Section = ({ title, children }) => (
   <Container>

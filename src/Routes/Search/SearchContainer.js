@@ -1,58 +1,61 @@
 import React from 'react';
-import { movieApi, tvApi } from 'api';
 import SearchPresenter from './SearchPresenter';
+import { movieApi, tvApi } from '../../api';
 
-export default class SearchContainer extends React.Component {
+export default class extends React.Component {
   state = {
-    error: '',
+    movieResults: null,
+    tvResults: null,
+    searchTerm: '',
     loading: false,
-    search: null,
-    term: 'code',
-    movies: [],
-    tvs: [],
+    error: null,
   };
 
-  componentDidMount = () => {
-    this.handleSubmit();
-  };
-
-  handleSubmit = () => {
-    const { term } = this.state;
-    if (term !== '') {
-      this.searching(term);
+  handleSubmit = (event) => {
+    event.preventDefault();
+    const { searchTerm } = this.state;
+    if (searchTerm !== '') {
+      this.searchByTerm();
     }
   };
 
-  searching = async (term) => {
-    try {
-      this.setState({
-        loading: true,
-      });
-      const {
-        data: { results: movies },
-      } = await tvApi.search(term);
-      const {
-        data: { results: tvs },
-      } = await movieApi.search(term);
+  updateTerm = (event) => {
+    const {
+      target: { value },
+    } = event;
+    this.setState({
+      searchTerm: value,
+    });
+  };
 
+  searchByTerm = async () => {
+    const { searchTerm } = this.state;
+    this.setState({ loading: true });
+    try {
+      const {
+        data: { results: movieResults },
+      } = await movieApi.search(searchTerm);
+      const {
+        data: { results: tvResults },
+      } = await tvApi.search(searchTerm);
       this.setState({
-        loading: true,
-        movies,
-        tvs,
+        movieResults,
+        tvResults,
       });
-      console.log(movies, tvs);
-    } catch (e) {
-      this.setState({
-        error: 'Can`t find results.',
-      });
+    } catch {
+      this.setState({ error: "Can't find results." });
     } finally {
-      this.setState({
-        loading: false,
-      });
+      this.setState({ loading: false });
     }
   };
 
   render() {
-    return <SearchPresenter />;
+    return (
+      <SearchPresenter
+        {...this.state}
+        handleSubmit={this.handleSubmit}
+        updateTerm={this.updateTerm}
+      />
+    );
   }
 }
