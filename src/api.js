@@ -8,12 +8,19 @@ const api = axios.create({
   },
 });
 
+// append_to_response : videos. images..
 export const movieApi = {
-  popular: () => api.get('/movie/popular'),
-  topRated: () => api.get('/movie/top_rated'),
-  nowPlaying: () => api.get('/movie/now_playing'),
+  detail: (id) =>
+    api.get(`movie/${id}`, {
+      params: {
+        append_to_response: 'videos',
+      },
+    }),
+  popular: () => api.get('movie/popular'),
+  topRated: () => api.get('movie/top_rated'),
+  nowPlaying: () => api.get('movie/now_playing'),
   search: (term) =>
-    api.get('/search/movie', {
+    api.get('search/movie', {
       params: {
         query: term,
       },
@@ -21,18 +28,21 @@ export const movieApi = {
 };
 
 export const tvApi = {
-  popular: () => api.get('/tv/popular'),
-  topRated: () => api.get('/tv/top_rated'),
-  AiringToday: () => api.get('/tv/airing_today'),
+  detail: (id) =>
+    api.get(`tv/${id}`, {
+      params: {
+        append_to_response: 'videos',
+      },
+    }),
+  popular: () => api.get('tv/popular'),
+  topRated: () => api.get('tv/top_rated'),
+  AiringToday: () => api.get('tv/airing_today'),
   search: (term) =>
-    api.get('/search/tv', {
+    api.get('search/tv', {
       params: {
         query: term,
       },
     }),
 };
-
-tvApi.search('god');
-tvApi.popular();
 
 export default api;
