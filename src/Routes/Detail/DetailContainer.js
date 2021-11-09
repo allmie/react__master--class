@@ -36,8 +36,6 @@ export default class DetailContainer extends React.Component {
       } else {
         ({ data: detail } = await tvApi.detail(parsedId));
       }
-
-      console.log(detail, isMovie);
     } catch (e) {
       this.setState({
         error: 'Can`t find result.',
