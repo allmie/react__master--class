@@ -72,23 +72,11 @@ const TVPresenter = ({ error, loading, popular, topRated, airingToday }) => (
 );
 
 TVPresenter.propTypes = {
-  error: PropTypes.string.isRequired,
+  topRated: PropTypes.array,
+  popular: PropTypes.array,
+  airingToday: PropTypes.array,
   loading: PropTypes.bool.isRequired,
-  popular: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-    })
-  ),
-  topRated: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-    })
-  ),
-  airingToday: PropTypes.arrayOf(
-    PropTypes.shape({
-      name: PropTypes.string.isRequired,
-    })
-  ),
+  error: PropTypes.string,
 };
 
 export default TVPresenter;

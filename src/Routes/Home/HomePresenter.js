@@ -72,26 +72,11 @@ const HomePresenter = ({ nowPlaying, popular, topRated, loading, error }) => (
 );
 
 HomePresenter.propTypes = {
-  nowPlaying: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-    }).isRequired
-  ),
-  popular: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-    }).isRequired
-  ),
-  topRated: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      title: PropTypes.string.isRequired,
-    }).isRequired
-  ),
+  nowPlaying: PropTypes.array,
+  popular: PropTypes.array,
+  upcoming: PropTypes.array,
   loading: PropTypes.bool.isRequired,
-  error: PropTypes.string.isRequired,
+  error: PropTypes.string,
 };
 
 export default HomePresenter;
