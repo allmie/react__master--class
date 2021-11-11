@@ -11,7 +11,7 @@ const Container = styled.div`
   padding: 0 10px;
 `;
 
-const HomePresenter = ({ nowPlaying, popular, topRated, loading, error }) => (
+const Movies = ({ nowPlaying, popular, topRated, loading, error }) => (
   <>
     <Helmet>
       <title>Movies | Nomflix</title>
@@ -71,7 +71,7 @@ const HomePresenter = ({ nowPlaying, popular, topRated, loading, error }) => (
   </>
 );
 
-HomePresenter.propTypes = {
+Movies.propTypes = {
   nowPlaying: PropTypes.array,
   popular: PropTypes.array,
   upcoming: PropTypes.array,
@@ -79,4 +79,4 @@ HomePresenter.propTypes = {
   error: PropTypes.string,
 };
 
-export default HomePresenter;
+export default Movies;
