@@ -11,7 +11,7 @@ const Container = styled.div`
   padding: 0 10px;
 `;
 
-const TVPresenter = ({ error, loading, popular, topRated, airingToday }) => (
+const TVs = ({ error, loading, popular, topRated, airingToday }) => (
   <>
     <Helmet>
       <title>TV | Nomflix</title>
@@ -71,7 +71,7 @@ const TVPresenter = ({ error, loading, popular, topRated, airingToday }) => (
   </>
 );
 
-TVPresenter.propTypes = {
+TVs.propTypes = {
   topRated: PropTypes.array,
   popular: PropTypes.array,
   airingToday: PropTypes.array,
@@ -79,4 +79,4 @@ TVPresenter.propTypes = {
   error: PropTypes.string,
 };
 
-export default TVPresenter;
+export default TVs;
