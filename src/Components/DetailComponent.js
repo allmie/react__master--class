@@ -68,7 +68,7 @@ const Overview = styled.p`
   width: 50%;
 `;
 
-const DetailPresenter = ({ detail, loading, error }) =>
+const DetailComponent = ({ detail, loading, error }) =>
   loading ? (
     <>
       <Helmet>
@@ -92,7 +92,7 @@ const DetailPresenter = ({ detail, loading, error }) =>
           bgImage={
             detail.poster_path
               ? `https://image.tmdb.org/t/p/original${detail.poster_path}`
-              : require('../../assets/noPosterImg.PNG')
+              : require('assets/noPosterImg.PNG')
           }
         />
         <Data>
@@ -127,10 +127,10 @@ const DetailPresenter = ({ detail, loading, error }) =>
     </Container>
   );
 
-DetailPresenter.propTypes = {
+DetailComponent.propTypes = {
   result: PropTypes.object,
   loading: PropTypes.bool.isRequired,
   error: PropTypes.string,
 };
 
-export default DetailPresenter;
+export default DetailComponent;
