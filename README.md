@@ -4,23 +4,23 @@ Learning React and ES6 by building a Movie Discovery App.
 
 ## Screens
 
-- [ ] Home(Movie)
-- [ ] TV
-- [ ] Search
-- [ ] Detail
+- [x] Home(Movie)
+- [x] TV
+- [x] Search
+- [x] Detail
 
 ## API
 
 Movie
 
-- [ ] Popular
-- [ ] TopRated
-- [ ] NowPlaying
-- [ ] Search
+- [x] Popular
+- [x] TopRated
+- [x] NowPlaying
+- [x] Search
 
 TV
 
-- [ ] Popular
-- [ ] TopRated
-- [ ] Airing Today
-- [ ] Search
+- [x] Popular
+- [x] TopRated
+- [x] Airing Today
+- [x] Search
