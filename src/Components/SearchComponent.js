@@ -22,7 +22,7 @@ const Input = styled.input`
   width: 100%;
 `;
 
-const SearchPresenter = ({
+const SearchComponent = ({
   movieResults,
   tvResults,
   loading,
@@ -84,7 +84,7 @@ const SearchPresenter = ({
   </Container>
 );
 
-SearchPresenter.propTypes = {
+SearchComponent.propTypes = {
   movieResults: PropTypes.array,
   tvResults: PropTypes.array,
   error: PropTypes.string,
@@ -94,4 +94,4 @@ SearchPresenter.propTypes = {
   updateTerm: PropTypes.func.isRequired,
 };
 
-export default SearchPresenter;
+export default SearchComponent;

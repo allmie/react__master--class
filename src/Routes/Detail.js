@@ -42,7 +42,7 @@ const Detail = (props) => {
     getDetail();
 
     return () => getDetail();
-  }, [props]);
+  });
 
   return <DetailComponent error={error} loading={loading} detail={detail} />;
 };
